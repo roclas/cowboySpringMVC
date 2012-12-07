@@ -41,16 +41,17 @@ public class LoginController {
 	//public String processForm(LoginForm loginForm, Map model) {
 		String userName = "Admin";
 		String password = "root";
-		
 		/*
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         Validator validator = factory.getValidator();
         Set<ConstraintViolation<LoginForm>> constraintViolations = validator.validate(loginForm);
         if(constraintViolations.size()>0){ return "loginform"; }
         */
-		
-		if(result.hasErrors()){return "loginform";}
 		loginForm = (LoginForm) model.get("loginForm");
+		if(result.hasErrors()){
+			loginForm.setUserName(null);
+			return "loginform";
+		}
 		if (!loginForm.getUserName().equals(userName) || !loginForm.getPassword().equals(password)) {
 			loginForm.setUserName(null);
 			return "loginerror";

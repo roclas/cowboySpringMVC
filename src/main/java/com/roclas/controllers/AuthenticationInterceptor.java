@@ -25,6 +25,7 @@ public class AuthenticationInterceptor extends HandlerInterceptorAdapter
    
    String redirectUri=uri.split(admin_prefix)[0]+"/login";
    if(loginForm== null || loginForm.getUserName()==null){
+	System.out.println("not logged in");
     response.sendRedirect(redirectUri);
     return false;
    }else {

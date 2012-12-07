@@ -12,8 +12,9 @@
  
  <!-- Enabling Spring MVC configuration through annotations -->
  <!-- 
- <mvc:annotation-driven /> 
  -->
+<mvc:annotation-driven /> 
+<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
  
  
  <!-- Defining which view resolver to use -->
@@ -22,15 +23,19 @@
   <property name="suffix" value=".jsp" /> 
  </bean>
  
- <!-- -->
  <bean id="authenticationInterceptor" class="com.roclas.controllers.AuthenticationInterceptor" />
  
+ <!--
  <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
  <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
   <property name="interceptors">
     <ref bean="authenticationInterceptor"/>
   </property>
  </bean>
+   -->
+<mvc:interceptors>
+    <ref bean="authenticationInterceptor"/>
+</mvc:interceptors>
  
  
  	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">

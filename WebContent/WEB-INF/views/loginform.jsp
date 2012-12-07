@@ -35,8 +35,10 @@
 
 			<tr>
 
-				<td>User Name:<FONT color="red"><form:errors
-							path="userName" /></FONT></td>
+				<td>User Name:
+				<FONT color="red">
+					<form:errors path="userName" />
+				</FONT></td>
 
 			</tr>
 

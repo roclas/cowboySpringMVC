@@ -1,6 +1,6 @@
 project --topLevelPackage com.springsource.roo.carlosshop
-//jpa setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY 
-jpa setup --provider HIBERNATE --database MYSQL --databaseName test --userName root --password admin
+jpa setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY 
+//jpa setup --provider HIBERNATE --database MYSQL --databaseName test --userName root --password admin
 
 // domain.Roles (Spring Security Authorities)
 entity jpa --class ~.domain.Roles --testAutomatically

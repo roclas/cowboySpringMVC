@@ -18,6 +18,8 @@ entity jpa --class ~.domain.Movida --testAutomatically
 field string --fieldName name --notNull --sizeMin 2
 
 
+//controller class --class ~.web.UsuariosController --preferredMapping /usuarios
+
 perform tests
 perform eclipse
 web mvc setup
